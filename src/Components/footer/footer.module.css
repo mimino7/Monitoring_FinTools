@@ -1,0 +1,12 @@
+.wrap__footer {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--sea-deep);
+    padding: 40px 20px;
+    box-sizing: border-box;
+    color: var(--gipsum);
+    /* justify-content: center; */
+    align-content: center;
+}

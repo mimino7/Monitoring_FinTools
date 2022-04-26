@@ -1,23 +1,26 @@
-import logo from './logo.svg';
+import { Route, Routes } from 'react-router';
 import './App.css';
+import ContentStart from './Pages/contentStart';
+import ContentValutes from './Pages/contentValutes';
+import Header from './Components/header/Header';
+import IntroduceHeader from './Components/introduceHeader/IntroduceHeader';
+
 
 function App() {
+
+  
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="wrapper">
+      <IntroduceHeader />
+      <Header />
+      <Routes>
+        <Route exact path='/menu1' element={<ContentStart/>} /> 
+        <Route exact path='/menu2' element={<ContentValutes />} />
+        {/* <Route exact path='/menu3' element={<ContentValutes />} />
+        <Route exact path='/menu4' element={<ContentValutes />} />
+        <Route exact path='/menu5' element={<ContentValutes />} /> */}
+      </Routes>
     </div>
   );
 }
