@@ -59,14 +59,12 @@ span {
     justify-content: center;
     align-items: center;
     color: var(--light-green);
-    /* padding: 70px;
-    margin:   auto 50%; */
 }
 .error {
     display: flex;
-   flex-direction: column;
-    color: rgb(41, 7, 7);
-    font-size: 22px;
+    flex-direction: column;
+    color: var(--sea-deep);
+    font-size: 20px;
 }
 .error p {
     margin-top: 20px;
