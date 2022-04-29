@@ -6,28 +6,33 @@ import useCommRequest from "../../hoocks/useCommRequest";
 
 import axios from "axios";
 import { CircularProgress } from "@mui/material";
+import uniqid from "uniqid";
 
-import { LIST_CURRENCY } from "../../API/constantsApi";
+import { ALL_CURRENCIES } from "../../API/constantsApi";
 
 import logo from "../../img/investing-logo11.png";
+import TabBase from "../../Components/UI/TabBase/TabBase";
+import tabHeaderVal from "../../dB";
+import { getPercentChange } from "../../Math/getPercentChange";
 
 const ContentValutes = () => {
-  const [currencyAll, setCurrencyAll] = useState("");
+  const [currencyData, setCurrencyData] = useState("");
+  const { Valute } = currencyData;
   const [getCurrency, loading, error] = useCommRequest(async () => {
-    const respons = await axios.get(LIST_CURRENCY).then((res) => res.data);
-    setCurrencyAll(respons);
+    const respons = await axios.get(ALL_CURRENCIES).then((res) => res.data);
+    setCurrencyData(respons);
   });
-  console.log(currencyAll.Valute);
   useEffect(() => {
     getCurrency();
   }, []);
   if (loading) {
     return (
       <div className={cl.loading}>
-        <CircularProgress color="success" />
+        <CircularProgress color="inherit" />
       </div>
     );
   }
+
   if (error) {
     return (
       <div className={cx(cl.loading, cl.error)}>
@@ -36,14 +41,25 @@ const ContentValutes = () => {
       </div>
     );
   }
+
   return (
     <div className={cl.wrap__content}>
       <div className={cl.content__left}>
-        <div className={cl.content__up}></div>
-        <div className={cl.content__bottom}>
-          <div className={cl.content__item}>Three</div>
-          <div className={cl.content__item}>Four</div>
-          <div className={cl.content__item}>Five</div>
+        <div className={cl.tab__wrap}>
+          <TabBase head={tabHeaderVal} bold={700} />
+          {Valute &&
+            Object.values(Valute).map((curr) => {
+              const arrow = curr.Value > curr.Previous ? "🠗" : "🠕";
+              const diff = getPercentChange(curr.Previous, curr.Value);
+              const tabCurr = [
+                curr.CharCode,
+                curr.Value,
+                curr.Previous,
+                `${arrow}   ${diff}`,
+              ];
+              return <TabBase key={uniqid()} head={tabCurr} diff={diff} />;
+            })}
+          <TabBase />
         </div>
       </div>
       <div className={cx(cl.content__rigth, cl.valutes)}>

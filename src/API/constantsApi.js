@@ -1,1 +1,1 @@
-export const LIST_CURRENCY = "https://www.cbr-xml-daily.ru/daily_json.js"
+export const ALL_CURRENCIES = "https://www.cbr-xml-daily.ru/daily_json.js"
