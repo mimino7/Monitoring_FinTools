@@ -1,5 +1,7 @@
 
 .wrap__content {
+    width: 100%;
+    max-width: 1200px;
     display: flex;
     padding: 10px;
     background-color: var(--light-green);

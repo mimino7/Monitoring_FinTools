@@ -27,3 +27,13 @@
 .red {  
     color: red;
 }
+.toolTip {
+    display: none;
+    background-color: var(--sea-deep);
+    color: var(--gipsum);
+    position: absolute;
+    padding: 7px 20px;
+    border-radius: 10px;
+    min-width: 200px;
+    text-align: center;
+}

@@ -1,5 +1,7 @@
 .wrap__header {
-    padding: 30px 10px;
+    width: 100%;
+    max-width: 1200px;
+    padding: 30px 0px;
     border-bottom: 1px solid ;
     background-color: var(--blue-greek);
 }

@@ -3,17 +3,11 @@ import cl from "./header.module.css";
 import cx from "classnames";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import uniqid from "uniqid";
+import { menuListHeader } from "../../dB";
 
 const Header = () => {
   const [isActive, setActive] = useState(true);
 
-  const menuList = [
-    "Главная",
-    "Валюта",
-    "Акции",
-    "Облигации",
-    "Цифровая валюта",
-  ];
   let navigate = useNavigate();
   useEffect(() => {
     navigate("/menu1");
@@ -23,7 +17,7 @@ const Header = () => {
     <div className={cl.wrap__header}>
       <div className={cl.wrap__menu}>
         <ul className={cl.menu}>
-          {menuList.map((m, i) => {
+          {menuListHeader.map((m, i) => {
             return (
               <li key={uniqid()} id={i + 1} className={cx(cl.menu__item)}>
                 <NavLink

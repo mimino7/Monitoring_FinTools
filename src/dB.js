@@ -1,5 +1,12 @@
  
- import moment from "moment";
 
- const tabHeaderVal = ['Валюта', 'Сегодня', "Вчера", 'Изменение']
- export default tabHeaderVal
+const tabHeadValutes = ['Валюта', 'Сегодня', "Вчера", 'Изменение']
+export default tabHeadValutes
+
+export const menuListHeader = [
+    "Главная",
+    "Валюта",
+    "Акции",
+    "Облигации",
+    "Цифровая валюта",
+    ]; 

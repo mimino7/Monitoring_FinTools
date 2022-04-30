@@ -1,5 +1,7 @@
 
 .wrap__content {
+    width: 100%;
+    max-width: 1200px;
     display: flex;
     padding: 10px;
     background-color: var(--light-green);
@@ -8,11 +10,21 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding: 30px 10px;
+    padding: 10px 10px;
     padding-left: 40px;
     color: var(--sea-deep);
     font-size: 21px;
     box-sizing: border-box;
+}
+.tab__date {
+    display: flex;
+    padding: 5px 17px;
+    margin-bottom: 2px;
+}
+span {
+    border-bottom: 1px dashed #000;
+    color: #000;
+    padding-bottom: 2px;
 }
 .tab__wrap {
     display: flex;
@@ -54,4 +66,10 @@
 }
 .error p {
     margin-top: 20px;
+}
+.toolTip {
+    background-color: aqua;
+    position: absolute;
+    width: 200px;
+
 }

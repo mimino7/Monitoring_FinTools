@@ -12,8 +12,9 @@ import { ALL_CURRENCIES } from "../../API/constantsApi";
 
 import logo from "../../img/investing-logo11.png";
 import TabBase from "../../Components/UI/TabBase/TabBase";
-import tabHeaderVal from "../../dB";
+import tabHeadValutes from "../../dB";
 import { getPercentChange } from "../../Math/getPercentChange";
+import { CURRENT__DATE } from "../../CONSTANS";
 
 const ContentValutes = () => {
   const [currencyData, setCurrencyData] = useState("");
@@ -22,9 +23,11 @@ const ContentValutes = () => {
     const respons = await axios.get(ALL_CURRENCIES).then((res) => res.data);
     setCurrencyData(respons);
   });
+
   useEffect(() => {
     getCurrency();
   }, []);
+
   if (loading) {
     return (
       <div className={cl.loading}>
@@ -45,8 +48,11 @@ const ContentValutes = () => {
   return (
     <div className={cl.wrap__content}>
       <div className={cl.content__left}>
+        <div className={cl.tab__date}>
+          <span>{CURRENT__DATE}</span>
+        </div>
         <div className={cl.tab__wrap}>
-          <TabBase head={tabHeaderVal} bold={700} />
+          <TabBase head={tabHeadValutes} bold={700} />
           {Valute &&
             Object.values(Valute).map((curr) => {
               const arrow = curr.Value > curr.Previous ? "🠗" : "🠕";
@@ -57,9 +63,15 @@ const ContentValutes = () => {
                 curr.Previous,
                 `${arrow}   ${diff}`,
               ];
-              return <TabBase key={uniqid()} head={tabCurr} diff={diff} />;
+              return (
+                <TabBase
+                  key={uniqid()}
+                  head={tabCurr}
+                  diff={diff}
+                  name={curr.Name}
+                />
+              );
             })}
-          <TabBase />
         </div>
       </div>
       <div className={cx(cl.content__rigth, cl.valutes)}>
