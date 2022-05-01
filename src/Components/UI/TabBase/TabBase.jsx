@@ -8,14 +8,11 @@ import cx from "classnames";
 const TabBase = (props) => {
   const ref = useRef();
 
-  const tooltipShow = (a) => {
-    if (ref.current) ref.current.style.display = "block";
-  };
-
   const tooltipHide = () => {
     if (ref.current) ref.current.style.display = "none";
   };
   const tooltipMove = (e) => {
+    if (ref.current) ref.current.style.display = "block";
     if (ref.current) {
       ref.current.style.left = e.pageX - 100 + "px";
       ref.current.style.top = e.pageY + 30 + "px";
@@ -24,8 +21,8 @@ const TabBase = (props) => {
 
   return (
     <div
+      onClick={props.handleModal}
       onMouseLeave={tooltipHide}
-      onMouseEnter={tooltipShow}
       onMouseMove={tooltipMove}
       className={cl.tab__wrap}
     >
@@ -40,6 +37,7 @@ const TabBase = (props) => {
                   </div>
                 )}
                 <li
+                  id={props.id}
                   className={
                     String(value).includes("🠕")
                       ? cx(cl.item, cl.green)

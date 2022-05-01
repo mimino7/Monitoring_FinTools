@@ -1,13 +1,13 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 const useCommRequest = (callback) => {
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState('')
 
-    const  fetching = async() => {
+    const  fetching = async(...args) => {
         setLoading(true)
         try {
-await callback()
+            await callback(...args)
         }
         catch (e) {
             console.log(e.message);

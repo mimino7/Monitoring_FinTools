@@ -1,5 +1,6 @@
 .tab__wrap {
     display: flex;
+    
     color: var(--sea-deep);
     font-size: 21px;
     padding: 3px 10px;
@@ -7,6 +8,7 @@
 }
 .tab {
     display: flex;
+    flex-grow:2;
     width: 100%;
     justify-content: space-between;
     box-shadow:  0 1px   rgba(0, 0, 0, 0.09);
@@ -18,7 +20,7 @@
 
 .item {
     display: flex;
-    width: 25%;
+    min-width: 25%;
     justify-content: start;
 }
 .green {
@@ -37,3 +39,5 @@
     min-width: 200px;
     text-align: center;
 }
+
+

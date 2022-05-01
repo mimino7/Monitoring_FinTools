@@ -41,7 +41,7 @@ span {
     flex-direction: column;
     padding: 75px ;
     opacity: 0.7;
-    /* width: 70%; */
+    z-index: 1;
 }
 .valutes {
     opacity: 0.2 
@@ -66,10 +66,4 @@ span {
 }
 .error p {
     margin-top: 20px;
-}
-.toolTip {
-    background-color: aqua;
-    position: absolute;
-    width: 200px;
-
 }
