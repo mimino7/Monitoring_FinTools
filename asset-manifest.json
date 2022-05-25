@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Monitoring_FinTools/static/css/main.9354b626.css",
+    "main.js": "/Monitoring_FinTools/static/js/main.bbced56b.js",
+    "static/media/investing-logo11.png": "/Monitoring_FinTools/static/media/investing-logo11.175caf0e0efe7c7e5119.png",
+    "index.html": "/Monitoring_FinTools/index.html",
+    "main.9354b626.css.map": "/Monitoring_FinTools/static/css/main.9354b626.css.map",
+    "main.bbced56b.js.map": "/Monitoring_FinTools/static/js/main.bbced56b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9354b626.css",
+    "static/js/main.bbced56b.js"
+  ]
+}
