@@ -50,7 +50,12 @@ const Modal = ({ setActiveModal, active, id, PrevURL }) => {
         {oldCurrs.length &&
           oldCurrs.map((cur) => {
             const { date, CharCode, Value } = cur;
-            return <TabBase key={uniqid()} head={[date, CharCode, Value]} />;
+            return (
+              <TabBase
+                key={uniqid()}
+                head={[date, CharCode, Value.toFixed(4)]}
+              />
+            );
           })}
       </div>
     </div>
